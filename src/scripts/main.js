@@ -49,11 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const appendColumn = () => {
     const rowCount = table.rows.length;
+    const columnCount = table.rows[0].cells.length;
 
     for (let i = 0; i < rowCount; i++) {
-      const newCell = table.rows[i].insertCell();
+      const newCell = table.rows[i].insertCell(columnCount);
 
-      newCell.textContent = `New column, ${i + 1}`;
+      newCell.textContent = `New column, ${columnCount + 1}`;
     }
 
     updateButtonState();
